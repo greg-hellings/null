@@ -27,5 +27,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt install -y libvirt-bin libvirt-daemon
-        sudo service start libvirtd
+        ls /usr/lib/systemd/system
+        sudo service start libvirt-daemon
         sudo ifconfig -a
