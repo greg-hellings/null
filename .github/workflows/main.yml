@@ -27,6 +27,16 @@ jobs:
       run: |
         set -e
         sudo apt-get update
-        sudo apt install -y libvirt-bin libvirt-daemon libvirt-daemon-system
-        sudo service libvirtd start
-        sudo ifconfig -a
+        sudo apt install -y python3-apt python-apt
+        which python
+        python -c "import apt"
+    - name: Install Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: More info
+      run: |
+        set -e
+        which python
+        python -c "import apt"
+        
