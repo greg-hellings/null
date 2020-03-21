@@ -25,7 +25,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
-        set -e
+        set +e
         sudo apt-get update
         sudo apt install -y python3-apt python-apt
         which python
@@ -36,7 +36,7 @@ jobs:
         python-version: 3.8
     - name: More info
       run: |
-        set -e
+        set +e
         which python
         python -c "import apt"
         
