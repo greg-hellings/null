@@ -40,6 +40,6 @@ jobs:
         which python
         python -m pip install -U pip
         which pip
-        pip install git+https://git.launchpad.net/ubuntu/+source/python-apt
+        pip install git+https://git.launchpad.net/ubuntu/+source/python-apt@applied/ubuntu/bionic-updates
         python -c "import apt"
         
