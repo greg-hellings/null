@@ -27,7 +27,7 @@ jobs:
       run: |
         set +e
         sudo apt-get update
-        sudo apt install -y python3-apt python-apt libapt-dev build-essential python3-setuptools
+        sudo apt install -y python3-apt python-apt libapt-pkg-dev build-essential python3-setuptools
         which python
         python -c "import apt"
     - name: Install Python 3.8
