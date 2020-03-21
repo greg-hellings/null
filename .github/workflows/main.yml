@@ -26,7 +26,7 @@ jobs:
     - name: Run a multi-line script
       run: |
         sudo apt-get update
-        sudo apt install -y libvirt-bin libvirt-daemon
-        ls /usr/lib/systemd/system
+        sudo apt install -y libvirt-bin libvirt-daemon libvirt-daemon-system
+        ls /lib/systemd/system
         sudo service start libvirt-daemon
         sudo ifconfig -a
