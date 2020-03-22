@@ -26,7 +26,7 @@ jobs:
       run: |
         set -x
         sudo apt-get update
-        dpkg -S /usr/share/golang*
+        dpkg -S /usr/share/golang-1.12
         dpkg -S /usr/share/dotnet
         find /usr -maxdepth 2 -mindepth 2 | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
         df -h
