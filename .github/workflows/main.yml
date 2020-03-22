@@ -22,6 +22,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: run some exploration
+      run: |
+        find / -maxdepth 2 -mindepth 2 | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
