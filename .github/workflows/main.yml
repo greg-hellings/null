@@ -26,6 +26,6 @@ jobs:
       run: |
         set -x
         sudo apt-get update
-        dpkg -S /usr/share/dotnet
+        dpkg -S /usr/share/dotnet | sed -s 's/, /\n/g' | awk '{print $1}' | sed -s 's/:$//' | xargs apt-get purge
         find /usr -maxdepth 2 -mindepth 2 | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
         df -h
