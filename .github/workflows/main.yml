@@ -24,4 +24,5 @@ jobs:
 
     - name: run some exploration
       run: |
-        find / -maxdepth 2 -mindepth 2 | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
+        find /usr -maxdepth 2 -mindepth 2 | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
+        df -h
