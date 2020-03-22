@@ -26,6 +26,6 @@ jobs:
       run: |
         set -x
         dpkg -S /usr/share/dotnet | sed -s 's/, /\n/g' | awk '{print $1}' | sed -s 's/:$//' | xargs sudo apt-get purge
-        dpkg -S /usr/share/go1.1*
+        dpkg -S /usr/share/go1.12
         find /usr -maxdepth 2 -mindepth 2 -type d | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
         df -h
