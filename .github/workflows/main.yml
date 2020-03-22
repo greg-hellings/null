@@ -25,6 +25,8 @@ jobs:
     - name: run some exploration
       run: |
         set -x
+        sudo apt-get update
+        suto apt-get install apt-file
         sudo apt-file update
         apt-file search /usr/share/dotnet
         apt-file search /usr/share/golang-1.12
