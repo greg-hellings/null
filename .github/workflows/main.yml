@@ -26,11 +26,7 @@ jobs:
       run: |
         set -x
         sudo apt-get update
-        sudo apt-get install apt-file
-        sudo apt-file update
-        sudo apt-get purge aspnetcore-runtime-{2.1,2.2,3.0,3.1} aspcore-store-2.0.{0,3,5,6,7,8,9} aspnetcore-targeting-pack-3.{0,1} \
-        dotnet-apphost-pack-3.{0,1} dotnet-dev-1.1.{11,13,14} dotnet-host dotnet-host-fxr-{1.1.9,1.1.10,1.1.11,1.1.12,1.1.13,2.0.7,2.0.9,2.1,2.2,3.0,3.1} \
-        dotnet-runtime-{2.0.7,2.0.9,2.1,2.2,3.0}
-        apt-file search /usr/share/golang
+        dpkg -S /usr/share/golang*
+        dpkg -S /usr/share/dotnet
         find /usr -maxdepth 2 -mindepth 2 | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
         df -h
