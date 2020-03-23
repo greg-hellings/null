@@ -27,7 +27,9 @@ jobs:
         set -x
         sudo rm -rf /usr/local/go1* /usr/share/dotnet /usr/share/rust /usr/local/julia* /usr/lib/firefox
         sudo apt-get purge llvm*
+        sudo apt-get autoremove
         find /usr -maxdepth 2 -mindepth 2 -type d | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
         df -h
+        sudo apt-get update
         sudo apt-get install libvirt-clients
         sudo virsh list | grep foo
