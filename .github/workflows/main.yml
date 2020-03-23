@@ -25,12 +25,13 @@ jobs:
     - name: run some exploration
       run: |
         set -x
-        sudo rm -rf /usr/local/go1* /usr/share/dotnet /usr/share/rust /usr/local/julia* /usr/lib/firefox
-        sudo apt-get purge llvm*
-        sudo apt-get autoremove
+        #sudo rm -rf /usr/local/go1* /usr/share/dotnet /usr/share/rust /usr/local/julia* /usr/lib/firefox
+        #sudo apt-get purge llvm*
+        #sudo apt-get autoremove
         sudo apt-get update
         sudo apt-get install libvirt-clients libvirt-daemon libvirt-daemon-system
         sudo service libvirtd start
-        find /usr -maxdepth 2 -mindepth 2 -type d | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
-        df -h
+        #find /usr -maxdepth 2 -mindepth 2 -type d | grep -v -E '^/(dev|proc|run|tmp|boot|root|sys)' | xargs -l du -sh 2>/dev/null | sort -h
+        #df -h
+        sudo virsh list
         sudo virsh list | grep foo
